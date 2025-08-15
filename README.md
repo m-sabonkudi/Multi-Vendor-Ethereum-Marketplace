@@ -171,7 +171,10 @@ First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 ---
 ### Set up the Solidity contract
 If you would like to deploy your own contract, watch the video here:
-[![Watch on YouTube](https://img.youtube.com/vi/KuNuQ8lEKAU/hqdefault.jpg)](https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V)
+<a href="https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V">
+  <img src="https://img.youtube.com/vi/KuNuQ8lEKAU/0.jpg" width="600">
+</a>
+
 
 
 ---
