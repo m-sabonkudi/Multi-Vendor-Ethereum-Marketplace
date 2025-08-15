@@ -149,15 +149,22 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ---
 
+## License & Contact
+
+- **License:** MIT
+- **Contact / Team:** mlawalskudi@gmail.com - https://linkedin.com/in/msabonkudi
+
+---
+
 ## How to set up on your PC or Mac
 
 ### Cloning
 
 To clone, run `git clone https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Marketplace.git`
 
-### Running on PC
+### Running on PC or Mac
 
-First, go into the project directory `cd ReactFlask-NoteKeeper`
+First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 
 ---
 #### Set up Flask
@@ -182,14 +189,7 @@ Install react dependencies: `cd client` -> `npm install`
 `npm run dev`
 
 
-Now you can go to this link in your browser: 🟢 [http://localhost:4001](http://localhost:4001)
-
----
-
-## License & Contact
-
-- **License:** MIT
-- **Contact / Team:** mlawalskudi@gmail.com - https://linkedin.com/in/msabonkudi
+Now you can go to this link in your browser: 🟢 [http://localhost:3051](http://localhost:3051)
 
 ---
 
