@@ -88,6 +88,7 @@ A friendly breakdown of what happens when a buyer and vendor transact:
 
 This flow keeps both parties protected and auditable on-chain.
 
+### [📄 View Flowchart PDF](assets/flowchart.pdf)
 ---
 
 ## Screenshots
