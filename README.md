@@ -169,6 +169,12 @@ To clone, run `git clone https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Ma
 First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 
 ---
+### Set up the Solidity contract
+If you would like to deploy your own contract, watch the video here:
+[![Watch on YouTube](https://img.youtube.com/vi/KuNuQ8lEKAU/0.jpg)](https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V)
+
+
+---
 ### Set up Flask
 Create a new virtual environment: `cd server` -> `python -m venv venv` (windows) or `python3 -m venv venv` (mac)
 
@@ -177,6 +183,19 @@ You should now have a folder named venv in your flask directory containing the v
 Activate the just-created virtual environment: `venv\Scripts\activate` (windows) or `source venv/bin/activate` (mac)
 
 Install required python libraries: `pip install -r requirements.txt` (windows) or `pip3 install -r requirements.txt` (mac)
+
+- Go to https://www.alchemy.com/ and log in/sign up. 
+- Once logged in, access your Alchemy Dashboard. -> Click on the “Apps” tab. -> Click the “Create new app” button.
+- Fill in the app details. -> Enter your desired app name. -> Choose "Marketplace" under use case.
+- Choose chains -> search for or find "Ethereum", then click on it and hit "Next" 
+- Click "Create App" 
+- By the top right, you'll see "API Key", then copy it. 
+
+Create `.env` file and paste in the following (replace with the value with your actual info):
+`ALCHEMY_API_KEY=PASTE_YOUR_API_KEY
+MAIL_USERNAME=youremail@gmail.com
+MAIL_PASSWORD=EMAIL_APP_PASSWORD
+SECRET_KEY=8BYkEfBA6O6zWlSihBXox7C0sKR6b`
 
 ---
 ### Set up React
