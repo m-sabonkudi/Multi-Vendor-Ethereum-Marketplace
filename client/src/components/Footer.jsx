@@ -17,7 +17,7 @@ const Footer = () => {
             </Link>
           </div>
           <p className="text-muted-foreground text-sm">
-            Your trusted platform for buying and selling vehicles across Nigeria.
+            Your trusted platform for buying and selling vehicles.
             Secure, fast, and simple.
           </p>
         </div>
