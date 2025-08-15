@@ -24,16 +24,14 @@ from contract import get_balance_and_autowithdrawStatus
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6zWlSihBXox7C0sKR6b'
-# csrf = CSRFProtect(app)
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cars.db'
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'mlawalskudi@gmail.com'       # Replace
-app.config['MAIL_PASSWORD'] = 'yehrgwfgwdfrmhsr'          # Use App Password
+app.config['MAIL_USERNAME'] = os.getenv("MAIL_USERNAME")   
+app.config['MAIL_PASSWORD'] =  os.getenv("MAIL_PASSWORD")        
 app.config['MAIL_DEFAULT_SENDER'] = ("Pyman Ethereum Marketplace", app.config['MAIL_USERNAME'])
-app.secret_key = "sideijidemedmwemlemels"
 mail = Mail(app)
 
 
@@ -90,8 +88,8 @@ def add_product():
     data = request.form
     images = request.files.getlist('images')
 
-    slug = re.sub(r'[^a-zA-Z0-9\s-]', '', data.get('title'))  # Remove non-alphanumeric characters
-    slug = slug.lower().replace(" ", "-")  # Convert to lowercase and replace spaces with hyphens
+    slug = re.sub(r'[^a-zA-Z0-9\s-]', '', data.get('title')) 
+    slug = slug.lower().replace(" ", "-") 
     slug = slug + "-" + str(uuid.uuid4())
 
     address = data.get("address").lower()
