@@ -80,7 +80,7 @@ This flow keeps both parties protected and auditable on-chain.
 - Home / Browse: 
 
 ![Home](assets/home.png)
-- Make a Purchase / Transaction creation: ![Purchase](/assets/pdf_images/page2_img1.png)  
+- Make a Purchase / Transaction creation: ![Home](assets/home.png)  
 - Vendor marks Delivered: ![Deliver](/assets/pdf_images/page3_img1.png)  
 - Buyer confirms: ![Confirm](/assets/pdf_images/page4_img1.png)  
 - Vendor claims funds: ![Claim](/assets/pdf_images/page5_img1.png)  
