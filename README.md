@@ -1,4 +1,4 @@
-# Pyman — Multi-Vendor Ethereum Vehicle Marketplace 🚗
+# Pyman — Multi-Vendor Ethereum Vehicle Marketplace
 
 > A friendly, secure marketplace where people buy and sell vehicles using Ethereum. Pyman pairs a clean shopping experience with on-chain escrow so buyers and sellers transact with confidence.
 
