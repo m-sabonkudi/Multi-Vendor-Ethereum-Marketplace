@@ -133,8 +133,8 @@ Pyman’s dispute flow is intentionally simple and transparent:
 ---
 
 ## Tech Stack (short)
-- Frontend: React.js, Tailwind, Shadcn, among others <br>
-    Wallet integration Ethers.js v6  
+- Frontend: React.js, Tailwind, Shadcn... <br>
+    Wallet integration:` Ethers.js v6  
 - Backend: Python / Flask 
 - Smart Contracts: Solidity (escrow, transaction lifecycle)  
 - Deployment: Sepolia testnet for development; Mainnet or L2s for production
