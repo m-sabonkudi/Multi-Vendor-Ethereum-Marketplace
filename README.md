@@ -48,29 +48,33 @@ A friendly breakdown of what happens when a buyer and vendor transact:
 
 1. **Make a Purchase**  
    - Buyer clicks *Buy* on a vehicle and signs a transaction.  
-   - The marketplace calls the smart contract to create a transaction record `transaction(productPrice, seller)`, sets the transaction status as **Status.Pending** and returns a `txn_id`.  
+   - The marketplace calls the smart contract to create a transaction record `transaction(productPrice, seller)`, sets the transaction status as `Status.Pending` and returns a `txn_id`.  
    - Funds (ETH) are placed into escrow by the contract.
 
 2. **Vendor Delivers Product**  
    - When the vendor ships/delivers the vehicle, they call `deliver(txn_id)`.  
-   - Contract updates the transaction status to **Status.Delivered** and emits a `Delivered` event.
+   - Contract updates the transaction status to `Status.Delivered` and emits a `Delivered` event.
 
 3. **Buyer Confirms Delivery**  
    - After receiving the vehicle, the buyer calls `satisfy(txn_id)` (confirm).  
-   - Contract updates the transaction status to **Status.Delivered**, emits `TransactionConfirmed` and the transaction moves toward settlement.
+   - Contract updates the transaction status to `Status.Delivered`, emits `TransactionConfirmed` and the transaction moves toward settlement.
 
 4. **Vendor Claims Funds**  
    - Vendor calls `claim(txn_id)` to withdraw the escrowed ETH once the transaction is confirmed.
         - If 24 hrs **have not** passed since the transaction was confirmed, then `revert WaitPeriodHasNotPassed` 
         - Else if 24 hrs **have** passed since the transaction was confirmed;
-            - Contract updates the transaction status to **Status.Delivered**, sends ETH to vendor and emits `SellerClaimed`.
+            - If the transaction status is `Status.Confirmed`;
+                - Contract updates the transaction status to `Status.Delivered`, sends ETH to vendor and emits `SellerClaimed`.
+            - Else revert transaction_status
 
 5. **If Buyer Disputes**  
-   - If an issue appears (e.g., mismatch, damage) the buyer can call `dispute(txn_id)`.  
-   - Contract sets status to **disputed** and emits `BuyerDisputed`. This prevents vendor claim until the dispute is resolved.
+   - If an issue appears (e.g., mismatch, damage) the buyer can call `dispute(txn_id)`.
+        - If 24 hrs **have** passed since the transaction was confirmed, then `revert WaitPeriodHasPassed` 
+        - Else if 24 hrs **have not** passed since the transaction was confirmed;  
+            - Contract sets status to `Status.Disputed` and emits `BuyerDisputed`. This prevents the vendor from claiming the funds (currently in escrow).
 
 6. **Return / Refund**  
-   - If the vendor accepts return or after resolution, the vendor calls `sellerConfirm(txn_id)` to confirm seller side and trigger refund.  
+   - If the vendor confirms the product return, the vendor calls `sellerConfirm(txn_id)` to confirm seller side and trigger refund.  
    - Contract returns ETH to buyer and emits `SellerConfirmed`.
 
 This flow keeps both parties protected and auditable on-chain.
@@ -95,7 +99,7 @@ This flow keeps both parties protected and auditable on-chain.
 These steps are written for shoppers who want to use the Pyman marketplace.
 
 ### 1. Prepare your wallet
-- Install a web3 wallet (e.g., MetaMask).  
+- Install the MetaMask web3 wallet.  
 - Connect your wallet to the correct network (the app should indicate if it’s a testnet or mainnet).
 
 ### 2. Browse and choose
@@ -104,19 +108,19 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ### 3. Buy with confidence
 - Click **Buy**, approve the transaction in your wallet. The smart contract will hold funds in escrow.  
-- Communicate with the vendor via the listing or order page for shipping/collection info.
+- Wait for the vendor to deliver to you.
 
 ### 4. Confirm or dispute
-- When you receive the vehicle, confirm delivery in the app to release payment to the vendor.  
-- If there’s an issue, open a dispute — this will pause the vendor’s ability to claim funds and trigger dispute resolution steps.
+- When you receive the vehicle, confirm delivery of the order.  
+    - If there’s an issue, dispute the transaction **within 24 hrs** after confirming delivery — this will pause the vendor’s ability to claim funds and trigger dispute resolution steps.
 
 ---
 
 ## For Vendors
 - Create accurate listings with photos, mileage, and clear descriptions.  
 - When ready to deliver, call the `deliver` flow in the app to mark the item as shipped/delivered.  
-- After the buyer confirms delivery, claim your funds using the `claim` flow.  
-- If a return is agreed, use the `sellerConfirm` step to process refunds as needed.
+- After the buyer confirms delivery, wait for 24 hrs, (if the buyer didn't dispute) you will then be claim your funds using the `claim` flow.  
+- If the buyer disputed, wait to get product return, then use the `sellerConfirm` step to process refunds as needed.
 
 ---
 
@@ -129,29 +133,19 @@ Pyman’s dispute flow is intentionally simple and transparent:
 ---
 
 ## Tech Stack (short)
-- Frontend: Modern JS (React/Vue) + wallet integration (Web3 / Ethers.js)  
-- Backend: Optional off-chain services for indexing, messaging, and admin tasks  
+- Frontend: Modern JS (React.js, Tailwind, Shadcn, among others) 
+    Wallet integration Ethers.js v6  
+- Backend: Python / Flask 
 - Smart Contracts: Solidity (escrow, transaction lifecycle)  
-- Deployment: Testnets for development; Mainnet or L2s for production
+- Deployment: Sepolia testnet for development; Mainnet or L2s for production
 
 > If you'd like a developer-focused README too, I can add smart contract docs, ABI snippets, and local setup commands.
 
 ---
 
-## Contributing
-We welcome contributions! If you'd like to help:
-1. Fork the repo.  
-2. Create a branch: `feature/awesome-thing`.  
-3. Open a PR with clear description and tests (where applicable).  
-4. We’ll review and give feedback.
-
-Please open issues for feature requests, bugs, or UX suggestions.
-
----
-
 ## License & Contact
 - **License:** MIT (or replace with your chosen license)  
-- **Contact / Team:** Add your email or a link to the project website here.
+- **Contact / Team:** mlawalskudi@gmail.com - linkedin.com/in/msabonkudi
 
 ---
 
