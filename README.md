@@ -191,8 +191,9 @@ Install required python libraries: `pip install -r requirements.txt` (windows) o
 - Click "Create App" 
 - By the top right, you'll see "API Key", then copy it. 
 
-Create `.env` file and paste in the following (replace with the value with your actual info):
-```ALCHEMY_API_KEY=PASTE_YOUR_API_KEY
+Create `.env` file and paste in the following (replace the value with your actual info):
+```
+ALCHEMY_API_KEY=PASTE_YOUR_API_KEY
 MAIL_USERNAME=youremail@gmail.com
 MAIL_PASSWORD=EMAIL_APP_PASSWORD
 SECRET_KEY=8BYkEfBA6O6zWlSihBXox7C0sKR6b
