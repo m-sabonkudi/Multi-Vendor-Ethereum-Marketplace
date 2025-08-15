@@ -78,6 +78,7 @@ This flow keeps both parties protected and auditable on-chain.
 (From the app wireframes / UI images included in the repo.)
 
 - Home / Browse: 
+
 ![Home](assets/home.png)
 - Make a Purchase / Transaction creation: ![Purchase](/assets/pdf_images/page2_img1.png)  
 - Vendor marks Delivered: ![Deliver](/assets/pdf_images/page3_img1.png)  
