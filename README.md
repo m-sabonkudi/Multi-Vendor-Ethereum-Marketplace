@@ -147,25 +147,12 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 - Smart Contracts: Solidity (escrow, transaction lifecycle)
 - Deployment: Sepolia testnet
 
-> If you'd like a developer-focused README too, I can add smart contract docs, ABI snippets, and local setup commands.
-
 ---
 
 ## License & Contact
 
 - **License:** MIT
 - **Contact / Team:** mlawalskudi@gmail.com - https://linkedin.com/in/msabonkudi
-
----
-
-## Final notes
-
-Pyman aims to make vehicle buying and selling as simple as browsing a site — while adding the safety of blockchain escrow. If you want, I can:
-
-- Turn this into a developer README with contract ABI, tests, and local setup commands;
-- Polish the screenshots and add a demo GIF;
-- Generate a short marketing blurb for the repo description.
-
 
 ---
 
