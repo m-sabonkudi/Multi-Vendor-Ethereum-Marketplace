@@ -139,23 +139,13 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ---
 
-## Disputes & Returns
-
-Pyman’s dispute flow is intentionally simple and transparent:
-
-- Buyer initiates `dispute(txn_id)` — transaction becomes **disputed**.
-- Marketplace operators or an arbitration process can be used to resolve the dispute (this repo contains the on-chain status and events; off-chain resolution is handled by admins or a trust framework you implement).
-- After resolution, the contract supports seller confirmation and refund flows so ETH gets returned when appropriate.
-
----
-
 ## Tech Stack (short)
 
 - Frontend: React.js, Tailwind, Shadcn... <br>
   Wallet integration: Ethers.js v6
 - Backend: Python / Flask
 - Smart Contracts: Solidity (escrow, transaction lifecycle)
-- Deployment: Sepolia testnet for development; Mainnet or L2s for production
+- Deployment: Sepolia testnet
 
 > If you'd like a developer-focused README too, I can add smart contract docs, ABI snippets, and local setup commands.
 
