@@ -171,10 +171,7 @@ First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 ---
 ### Set up the Solidity contract
 If you would like to deploy your own contract, watch the video here:
-<a href="https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V">
-  <img src="https://img.youtube.com/vi/KuNuQ8lEKAU/0.jpg" width="600">
-</a>
-
+[![Watch on YouTube](https://img.youtube.com/vi/KuNuQ8lEKAU/hqdefault.jpg)](https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V)
 
 
 ---
@@ -195,10 +192,11 @@ Install required python libraries: `pip install -r requirements.txt` (windows) o
 - By the top right, you'll see "API Key", then copy it. 
 
 Create `.env` file and paste in the following (replace with the value with your actual info):
-`ALCHEMY_API_KEY=PASTE_YOUR_API_KEY
+```ALCHEMY_API_KEY=PASTE_YOUR_API_KEY
 MAIL_USERNAME=youremail@gmail.com
 MAIL_PASSWORD=EMAIL_APP_PASSWORD
-SECRET_KEY=8BYkEfBA6O6zWlSihBXox7C0sKR6b`
+SECRET_KEY=8BYkEfBA6O6zWlSihBXox7C0sKR6b
+```
 
 ---
 ### Set up React
