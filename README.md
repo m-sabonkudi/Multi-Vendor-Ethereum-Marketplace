@@ -105,7 +105,9 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 ### 1. Prepare your wallet
 
 - Install the MetaMask web3 wallet extension in your browser.
-- Connect your wallet to the correct network (the app should indicate if it’s a testnet or mainnet).
+- Connect your wallet to the correct network (sepolia testnet).
+
+[![Sign Up Video](https://img.youtube.com/vi/RoQtItf76W4/hqdefault.jpg)](https://youtu.be/RoQtItf76W4)
 
 ### 2. Browse and choose
 
@@ -162,7 +164,7 @@ First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 
 ---
 ### Set up the Solidity contract
-If you would like to deploy your own contract, we will soon release a video on how to do that on the YouTube channel: https://www.youtube.com/@pyman_dev
+If you would like to deploy your own contract, I will soon release a video on how to do that on the YouTube channel: https://www.youtube.com/@pyman_dev
 
 
 ---
