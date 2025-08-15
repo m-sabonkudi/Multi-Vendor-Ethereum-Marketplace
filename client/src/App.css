@@ -175,3 +175,18 @@
 Button {
   cursor: pointer;
 }
+
+
+@keyframes popInOut {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.pop-animate {
+  animation: popInOut 1.1s ease-in-out infinite;
+  animation-play-state: running;
+}
+
+.pop-animate:hover {
+  animation-play-state: paused; /* freezes at the exact frame */
+}

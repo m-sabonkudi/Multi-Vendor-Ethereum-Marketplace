@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Car, Star, Users, Shield, ArrowRight, Filter } from 'lucide-react'
+import { Car, Star, Users, Shield, ArrowRight, Filter, ArrowUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Link, useLocation } from 'react-router-dom'
 import ProductCard from '@/components/ProductCard'
 import Spinner from '@/components/Spinner'
 import FilterComponent from '@/components/FilterComponent'
 import { toast } from 'sonner'
+import { FaGithub } from 'react-icons/fa6'
 
 
 const Home = () => {
@@ -79,13 +80,17 @@ const Home = () => {
               Discover the largest marketplace for quality vehicles.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild>
+              {/* <Button size="lg" asChild>
                 <Link to="/products">Browse Vehicles</Link>
-              </Button>
-              {/* <Button size="lg" variant="outline" asChild>
-                <Link to="/add">Sell Your Car</Link>
               </Button> */}
+              <Button size="lg" variant="outline" asChild>
+                <Link target='_blank' className="flex items-center gap-2 pop-animate" to="https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Marketplace">View case study & source! <FaGithub/></Link>
+              </Button>
             </div>
+            <p className="mt-4 text-sm text-muted-foreground mb-8 max-w-3xl mx-auto flex flex-col items-center text-center">
+              <ArrowUp className="" />
+              Includes architecture diagrams, flowcharts, design decisions, and full source with setup instructions.
+            </p>
           </div>
         </div>
         <div className='mt-10'>
