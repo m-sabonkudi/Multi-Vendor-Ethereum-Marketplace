@@ -110,7 +110,7 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ### 1. Prepare your wallet
 
-- Install the MetaMask web3 wallet.
+- Install the MetaMask web3 wallet extension in your browser.
 - Connect your wallet to the correct network (the app should indicate if it’s a testnet or mainnet).
 
 ### 2. Browse and choose
@@ -153,7 +153,7 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ## License & Contact
 
-- **License:** MIT (or replace with your chosen license)
+- **License:** MIT
 - **Contact / Team:** mlawalskudi@gmail.com - https://linkedin.com/in/msabonkudi
 
 ---
