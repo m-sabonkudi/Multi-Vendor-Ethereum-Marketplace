@@ -5,9 +5,8 @@ import Spinner from "@/components/Spinner";
 import { toast } from 'sonner'
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { getbalance } from "@/contract/functions";
 import { Switch } from "@/components/ui/switch";
-import { toggleAutoWithdraw, getAutoWithdrawStatus, withdraw } from "@/contract/functions";
+import { toggleAutoWithdraw, withdraw } from "@/contract/functions";
 import LoadingButton from "@/components/LoadingButton";
 
 
