@@ -48,7 +48,7 @@ A friendly breakdown of what happens when a buyer and vendor transact:
 
 1. **Make a Purchase**  
    - Buyer clicks *Buy* on a vehicle and signs a transaction.  
-   - The marketplace calls the smart contract to create a transaction record (`transaction(txn_id, buyer, seller, amount)`) and returns a `txn_id`.  
+   - The marketplace calls the smart contract to create a transaction record `transaction(productPrice, seller)` and returns a `txn_id`.  
    - Funds (ETH) are placed into escrow by the contract.
 
 2. **Vendor Delivers Product**  
