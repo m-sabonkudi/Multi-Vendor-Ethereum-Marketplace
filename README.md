@@ -15,6 +15,7 @@
 - [For Vendors](#for-vendors)
 - [Tech Stack (short)](#tech-stack-short)
 - [License & Contact](#license--contact)
+- [How to set up on your PC or Mac](#how-to-set-up-on-your-pc-or-mac)
 - [Contract ABI](#contract-abi)
 
 
