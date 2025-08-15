@@ -1,12 +1,11 @@
-# React + Vite
+### What actually enables the backend (flask) and frontend (react.js) to interact with each other?
+If you look at the last line in the `app.py` file, you'll see:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![main.py](../assets/app.py.png)
 
-Currently, two official plugins are available:
+This tells flask to host the app on port `3051`. Now that our flask app is running on port `3051`, we now need to configure our react app to fetch backend data from that port. To do that, you can see the code in `vite.config.js`, like so:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![vite.config.js](../assets/vite.config.js.png)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+By default, (when using vite) react runs on port `5173`, line `4` which shows `port : 3001,` asks react not to use the default port but should run on port `3001` instead.
+In line `7`, we then configured the react app to send any requests beginning with `/api` to the port `http://localhost:3051`, which is where our flask app is running.
