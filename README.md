@@ -171,7 +171,21 @@ Pyman aims to make vehicle buying and selling as simple as browsing a site — w
 
 ## Contract ABI
 
-`[
+
+> This renders a nicely formatted JSON code block in the README.
+
+---
+
+### 3. **Use a collapsible section (optional)**
+If the ABI is large, you can hide it in a collapsible block:
+
+```markdown
+<details>
+<summary>Show ABI</summary>
+
+```json
+{
+  "abi": [
    {
       "inputs":[
          
@@ -846,4 +860,5 @@ Pyman aims to make vehicle buying and selling as simple as browsing a site — w
       "stateMutability":"nonpayable",
       "type":"function"
    }
-]`
+]
+}
