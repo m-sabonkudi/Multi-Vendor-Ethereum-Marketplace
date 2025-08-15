@@ -93,16 +93,8 @@ This flow keeps both parties protected and auditable on-chain.
 
 ## Screenshots
 
-(From the app wireframes / UI images included in the repo.)
-
 - Home / Browse: ![Home](assets/home.png)
-- Make a Purchase / Transaction creation: ![Home](assets/home.png)
-- Vendor marks Delivered: ![Deliver](/assets/pdf_images/page3_img1.png)
-- Buyer confirms: ![Confirm](/assets/pdf_images/page4_img1.png)
-- Vendor claims funds: ![Claim](/assets/pdf_images/page5_img1.png)
-- Dispute flow: ![Dispute prompt](/assets/pdf_images/page6_img1.png)
-- Buyer disputes: ![Dispute action](/assets/pdf_images/page7_img1.png)
-- Confirm return / refund: ![Return](/assets/pdf_images/page8_img1.png)
+
 
 ---
 
@@ -170,8 +162,7 @@ First, go into the project directory `cd Multi-Vendor-Ethereum-Marketplace`
 
 ---
 ### Set up the Solidity contract
-If you would like to deploy your own contract, watch the video here:
-[![Watch on YouTube](https://img.youtube.com/vi/KuNuQ8lEKAU/hqdefault.jpg)](https://youtu.be/KuNuQ8lEKAU?si=Xac07y39RvSDi80V)
+If you would like to deploy your own contract, we will soon release a video on how to do that on the YouTube channel: https://www.youtube.com/@pyman_dev
 
 
 ---

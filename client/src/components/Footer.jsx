@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react'
-import { FaXTwitter, FaTiktok, FaYoutube, FaLinkedin } from 'react-icons/fa6'
+import { FaXTwitter, FaTiktok, FaYoutube, FaLinkedin, FaGithub } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -63,6 +63,10 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/msabonkudi" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
               className="text-muted-foreground hover:text-primary transition-colors duration-200">
               <FaLinkedin className="w-5 h-5" />
+            </a>
+            <a href="https://www.github.com/m-sabonkudi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200">
+              <FaGithub className="w-5 h-5" />
             </a>
           </div>
         </div>
