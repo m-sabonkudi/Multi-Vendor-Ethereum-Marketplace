@@ -77,7 +77,8 @@ This flow keeps both parties protected and auditable on-chain.
 ## Screenshots
 (From the app wireframes / UI images included in the repo.)
 
-- Home / Browse: ![Home](assets/home.png)
+- Home / Browse: 
+![Home](assets/home.png)
 - Make a Purchase / Transaction creation: ![Purchase](/assets/pdf_images/page2_img1.png)  
 - Vendor marks Delivered: ![Deliver](/assets/pdf_images/page3_img1.png)  
 - Buyer confirms: ![Confirm](/assets/pdf_images/page4_img1.png)  
@@ -85,8 +86,6 @@ This flow keeps both parties protected and auditable on-chain.
 - Dispute flow: ![Dispute prompt](/assets/pdf_images/page6_img1.png)  
 - Buyer disputes: ![Dispute action](/assets/pdf_images/page7_img1.png)  
 - Confirm return / refund: ![Return](/assets/pdf_images/page8_img1.png)
-
-> Tip: Replace the image paths above with your actual `assets/` or `screenshots/` paths in the repo for clean display on GitHub.
 
 ---
 
