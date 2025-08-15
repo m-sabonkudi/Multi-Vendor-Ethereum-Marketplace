@@ -2,7 +2,8 @@
 
 > A friendly, secure marketplace where people buy and sell vehicles using Ethereum. Pyman pairs a clean shopping experience with on-chain escrow so buyers and sellers transact with confidence.
 
-[📄 View PDF Flowchart](assets/flowchart.pdf)
+
+[📄 View Flowchart PDF](assets/flowchart.pdf)
 ---
 
 ## Table of Contents
@@ -77,7 +78,7 @@ This flow keeps both parties protected and auditable on-chain.
 ## Screenshots
 (From the app wireframes / UI images included in the repo.)
 
-- **Home / Browse:** ![Home](assets/home.png)
+- Home / Browse: ![Home](assets/home.png)
 - Make a Purchase / Transaction creation: ![Home](assets/home.png)  
 - Vendor marks Delivered: ![Deliver](/assets/pdf_images/page3_img1.png)  
 - Buyer confirms: ![Confirm](/assets/pdf_images/page4_img1.png)  
