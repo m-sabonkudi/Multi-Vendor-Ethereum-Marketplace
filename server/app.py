@@ -18,7 +18,7 @@ from sqlalchemy import func
 import shutil
 import pyotp
 from datetime import datetime, timedelta, timezone
-from mail_file import send_contact_email, send_transaction_mail
+from mail_file import send_contact_email, send_transaction_mail, CONTRACT_LINK
 from contract import get_balance_and_autowithdrawStatus
 
 
@@ -321,8 +321,8 @@ def verify_otp():
     totp = pyotp.TOTP(secret, interval=300)
     if totp.verify(otp_input):
         msg = Message(subject="Signed Up!", recipients=[email])
-        msg.body = """Thanks for signing up to Pyman, a multivendor car marketplace built on the ethereum blockchain. See the contract at https://sepolia.etherscan.io/tx/aj83idem
-            If you are a wanna-be vendor, you can update your account to vendor account at http://pyman-eth.com/account
+        msg.body = f"""Thanks for signing up to Pyman, a multivendor car marketplace built on the ethereum blockchain. See the contract at {CONTRACT_LINK}
+            If you are a wanna-be vendor, you can update your account to vendor account at https://multivendor-ethereum-marketplace.vercel.app/account
         """
         mail.send(msg)
         session.clear()
