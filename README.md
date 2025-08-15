@@ -149,6 +149,43 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 ---
 
+## How to set up on your PC or Mac
+
+### Cloning
+
+To clone, run `git clone https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Marketplace.git`
+
+### Running on PC
+
+First, go into the project directory `cd ReactFlask-NoteKeeper`
+
+---
+#### Set up Flask
+Create a new virtual environment: `cd server` -> `python -m venv venv` (windows) or `python3 -m venv venv` (mac)
+
+You should now have a folder named venv in your flask directory containing the virtual environment.
+
+Activate the just-created virtual environment: `venv\Scripts\activate` (windows) or `source venv/bin/activate` (mac)
+
+Install required python libraries: `pip install -r requirements.txt` (windows) or `pip3 install -r requirements.txt` (mac)
+
+---
+#### Set up React
+Install react dependencies: `cd client` -> `npm install`
+
+---
+#### Run Flask
+`python app.py` (windows) or `python3 app.py` (mac)
+
+---
+#### Run React
+`npm run dev`
+
+
+Now you can go to this link in your browser: 🟢 [http://localhost:4001](http://localhost:4001)
+
+---
+
 ## License & Contact
 
 - **License:** MIT
