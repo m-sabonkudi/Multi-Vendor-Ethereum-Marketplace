@@ -189,7 +189,7 @@ Install react dependencies: `cd client` -> `npm install`
 `npm run dev`
 
 
-Now you can go to this link in your browser: 🟢 [http://localhost:3051](http://localhost:3051)
+Now you can go to this link in your browser: 🟢 [http://localhost:3001](http://localhost:3001)
 
 ---
 
