@@ -48,20 +48,22 @@ A friendly breakdown of what happens when a buyer and vendor transact:
 
 1. **Make a Purchase**  
    - Buyer clicks *Buy* on a vehicle and signs a transaction.  
-   - The marketplace calls the smart contract to create a transaction record `transaction(productPrice, seller)` and returns a `txn_id`.  
+   - The marketplace calls the smart contract to create a transaction record `transaction(productPrice, seller)`, sets the transaction status as **Status.Pending** and returns a `txn_id`.  
    - Funds (ETH) are placed into escrow by the contract.
 
 2. **Vendor Delivers Product**  
    - When the vendor ships/delivers the vehicle, they call `deliver(txn_id)`.  
-   - Contract updates the transaction status to **delivered** and emits a `Delivered` event.
+   - Contract updates the transaction status to **Status.Delivered** and emits a `Delivered` event.
 
 3. **Buyer Confirms Delivery**  
    - After receiving the vehicle, the buyer calls `satisfy(txn_id)` (confirm).  
-   - Contract emits `TransactionConfirmed` and the transaction moves toward settlement.
+   - Contract updates the transaction status to **Status.Delivered**, emits `TransactionConfirmed` and the transaction moves toward settlement.
 
 4. **Vendor Claims Funds**  
-   - Vendor calls `claim(txn_id)` to withdraw the escrowed ETH once the transaction is confirmed.  
-   - Contract sends ETH to vendor and emits `SellerClaimed`.
+   - Vendor calls `claim(txn_id)` to withdraw the escrowed ETH once the transaction is confirmed.
+        - If 24 hrs **have not** passed since the transaction was confirmed, then `revert WaitPeriodHasNotPassed` 
+        - Else if 24 hrs **have** passed since the transaction was confirmed;
+            - Contract updates the transaction status to **Status.Delivered**, sends ETH to vendor and emits `SellerClaimed`.
 
 5. **If Buyer Disputes**  
    - If an issue appears (e.g., mismatch, damage) the buyer can call `dispute(txn_id)`.  
