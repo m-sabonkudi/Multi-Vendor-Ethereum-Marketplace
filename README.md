@@ -145,7 +145,7 @@ Pyman’s dispute flow is intentionally simple and transparent:
 
 ## License & Contact
 - **License:** MIT (or replace with your chosen license)  
-- **Contact / Team:** mlawalskudi@gmail.com - linkedin.com/in/msabonkudi
+- **Contact / Team:** mlawalskudi@gmail.com - https://linkedin.com/in/msabonkudi
 
 ---
 
