@@ -62,7 +62,7 @@ def home():
 
 @app.get("/api/get-products")
 def get_products():
-    products = Product.query.order_by(Product.created_at.asc()).all()
+    products = Product.query.order_by(Product.created_at.desc()).all()
     return jsonify([product.to_dict() for product in products])
 
 
