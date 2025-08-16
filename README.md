@@ -107,10 +107,9 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 - Install the MetaMask web3 wallet extension in your browser.
 - Connect your wallet to the correct network (sepolia testnet).
 
-<video controls width="600">
-  <source src="assets/account-create.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[![Sign Up Video](https://img.youtube.com/vi/RoQtItf76W4/hqdefault.jpg)](https://youtu.be/RoQtItf76W4)
+
+https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Marketplace/blob/main/assets/account-create.mp4
 
 ### 2. Browse and choose
 
