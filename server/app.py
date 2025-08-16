@@ -411,7 +411,7 @@ def verify_otp():
                     <p>
                         <a href="https://multivendor-ethereum-marketplace.vercel.app/account" 
                         class="button" target="_blank">
-                        Upgrade to Vendor Account
+                        Account Page
                         </a>
                     </p>
                 </div>
