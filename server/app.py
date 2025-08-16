@@ -44,7 +44,7 @@ with app.app_context():
     db.create_all()
 
 
-BRANDS = ["Acura", "Aston-Martin", "Audi", "Bentley", "BMW", "BYD", "Cadillac", "Chevrolet", "Citroen",
+BRANDS = ["Acura", "Aston-Martin", "Audi", "Avatr", "Bentley", "BMW", "BYD", "Cadillac", "Chevrolet", "Citroen",
           "Ford", "GMC", "Honda", "Hyundai", "Infiniti", "Kia", "Land-Rover", "Lexus", "Maybach", "McLaren",
           "Mercedes-AMG", "Mercedes-Benz", "Mitsubishi", "Nissan", "Peugeot", "Renault", "Rolls-Royce", "Tesla",
           "Toyota", "Volkswagen"
