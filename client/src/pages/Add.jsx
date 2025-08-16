@@ -304,10 +304,10 @@ const moveImageDown = (index) => {
         </div>
 
         <div>
-          <Label htmlFor="price" className="mb-2 block">Price (₦) *</Label>
+          <Label htmlFor="price" className="mb-2 block">Price (ETH) *</Label>
           <Input
             id="price"
-            placeholder="e.g., 2,200,000"
+            placeholder="e.g., 0.1 ETH"
             inputMode="numeric"      
             pattern="[0-9]*"           
             value={formData.price}

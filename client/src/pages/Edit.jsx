@@ -273,10 +273,10 @@ const Edit = () => {
           />
         </div>
         <div>
-          <Label htmlFor="price" className="mb-2 block">Price (₦) *</Label>
+          <Label htmlFor="price" className="mb-2 block">Price (ETH) *</Label>
           <Input
             id="price"
-            placeholder="e.g., 2,200,000"
+            placeholder="e.g., 0.01 ETH"
             inputMode="numeric"
             value={formData.price}
             onChange={(e) => handleInputChange('price', e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'))}
