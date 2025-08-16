@@ -143,7 +143,7 @@ Watch video on creating an account:
 - Frontend: React.js, Tailwind, Shadcn... <br>
   Wallet integration: Ethers.js v6
 - Backend: Python / Flask
-- Smart Contracts: Solidity (escrow, transaction lifecycle)
+- Smart Contracts & Tooling: Solidity, Hardhat
 - Deployment: Sepolia testnet
 
 ---
