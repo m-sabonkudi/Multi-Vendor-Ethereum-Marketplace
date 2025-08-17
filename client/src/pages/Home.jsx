@@ -7,6 +7,8 @@ import Spinner from '@/components/Spinner'
 import FilterComponent from '@/components/FilterComponent'
 import { toast } from 'sonner'
 import { FaGithub } from 'react-icons/fa6'
+import EtherscanLogo from '@/components/EtherscanLogo'
+
 
 
 const Home = () => {
@@ -68,9 +70,12 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20">
+      <section className="bg-gradient-to-br from-primary/10 via-background to-accent/10 py-20 pt-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <Button size={"sm"} variant="outline" className={"mb-2"} asChild>
+              <Link target='_blank' className="flex items-center gap-2" to="https://sepolia.etherscan.io/address/0xca5c9a13495152AB6390d0A26715fF56db404B36">View on Etherscan <EtherscanLogo /></Link>
+            </Button>
             
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
               Multi-Vendor
@@ -83,7 +88,7 @@ const Home = () => {
               {/* <Button size="lg" asChild>
                 <Link to="/products">Browse Vehicles</Link>
               </Button> */}
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" asChild>
                 <Link target='_blank' className="flex items-center gap-2 pop-animate" to="https://github.com/m-sabonkudi/Multi-Vendor-Ethereum-Marketplace">View case study & source! <FaGithub/></Link>
               </Button>
             </div>
