@@ -109,8 +109,7 @@ These steps are written for shoppers who want to use the Pyman marketplace.
 
 Watch video on creating an account:
 
-[Sign Up Video — How to create an account](https://youtu.be/RoQtItf76W4)
-
+[![Sign Up Video](https://img.youtube.com/vi/RoQtItf76W4/hqdefault.jpg)](https://youtu.be/RoQtItf76W4)
 
 ### 2. Browse and choose
 
