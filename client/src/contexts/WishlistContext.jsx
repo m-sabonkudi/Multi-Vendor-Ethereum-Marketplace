@@ -61,9 +61,11 @@ export function WishlistProvider({ children }) {
         });
         if (res.ok) {
           setWishlists(prev => [...prev, product_id]);
+          return { status: true }
         }
       } catch (err) {
         console.error("Failed to add to wishlist:", err);
+        return { status: false, message: err.message }
       }
     } else {
       const updated = [...wishlists, product_id];
@@ -83,9 +85,11 @@ export function WishlistProvider({ children }) {
         });
         if (res.ok || res.status === 204) {
           setWishlists(prev => prev.filter(id => id !== product_id));
+          return { status: true }
         }
       } catch (err) {
         console.error("Failed to remove from wishlist:", err);
+        return { status: false, message: err.message }
       }
     } else {
       const updated = wishlists.filter(id => id !== product_id);

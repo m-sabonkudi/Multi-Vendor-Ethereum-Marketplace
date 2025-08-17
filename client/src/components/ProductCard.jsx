@@ -5,22 +5,36 @@ import { useState } from 'react'
 import { useContext } from "react";
 import { WishlistContext } from '@/contexts/WishlistContext';
 import { toast } from 'sonner';
+import LoadingButton from './LoadingButton';
 
 
 const ProductCard = ({ slug, image, title, price, transmission, fuel_type, id }) => {
   const [showTooltip, setShowTooltip] = useState(false)
   const { addToWishlist, removeFromWishlist, isWishlisted } = useContext(WishlistContext)
+  const [loadingWishlisting, setLoadingWishlisting] = useState(false)
 
   const wishlisted = isWishlisted(id)
 
-  const toggleWishlist = () => {
+  async function toggleWishlist() {
+    setLoadingWishlisting(true)
     if (wishlisted) {
-      removeFromWishlist(id)
-      toast.success("Removed from wishlist.")
+      const {status, ...data } = await removeFromWishlist(id)
+      if (status) {
+        toast.success("Removed from wishlist.")
+      } else {
+        const { message } = data
+        toast.error(message)
+      }
     } else {
-      addToWishlist(id)
-      toast.success("Added to wishlist.")
+      const {status, ...data} = await addToWishlist(id)
+      if (status) {
+        toast.success("Added to wishlist.")
+      } else {
+        const { message } = data
+        toast.error(message)
+      }
     }
+    setLoadingWishlisting(false)
   }
 
 
@@ -28,21 +42,24 @@ const ProductCard = ({ slug, image, title, price, transmission, fuel_type, id })
     <div className="relative bg-card border border-border rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group">
       {/* Wishlist Button */}
       <button
+      disabled={loadingWishlisting}
       onClick={toggleWishlist}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
         className="cursor-pointer absolute top-3 right-3 z-10 bg-black/60 hover:bg-black/70 text-white rounded-full p-2 shadow-sm transition-colors"
       >
+    {loadingWishlisting ? <LoadingButton /> :
+      <Heart
+        className={`w-5 h-5 ${wishlisted ? 'text-red-600 fill-red-600' : 'text-white fill-none'}`}
+      />
+    }
 
-  <Heart
-  className={`w-5 h-5 ${wishlisted ? 'text-red-600 fill-red-600' : 'text-white fill-none'}`}
-/>
 
-  {showTooltip && (
+  {/* {showTooltip && (
     <div className="absolute top-full mt-1 right-1 whitespace-nowrap bg-foreground text-background text-xs px-2 py-1 rounded shadow">
       {wishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
     </div>
-  )}
+  )} */}
 </button>
 
 
