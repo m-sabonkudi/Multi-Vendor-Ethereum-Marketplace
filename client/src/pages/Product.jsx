@@ -47,18 +47,37 @@ const Product = () => {
   const { walletAddress, loading: loadingAddress } = useWallet();
 
     const { addToWishlist, removeFromWishlist, isWishlisted } = useContext(WishlistContext)
+    const [loadingWishlisting, setLoadingWishlisting] = useState(false)
   
     const wishlisted = product ? isWishlisted(product.id) : false;
   
-    const toggleWishlist = () => {
-      if (wishlisted) {
-        removeFromWishlist(product.id)
-        toast.success("Removed from wishlist.")
-      } else {
-        addToWishlist(product.id)
-        toast.success("Added to wishlist.")
+    async function toggleWishlist(){
+      setLoadingWishlisting(true)
+      try {
+        const result = wishlisted 
+          ? await removeFromWishlist(product.id) 
+          : await addToWishlist(product.id);
+
+        // Defensive check in case result is undefined/null
+        if (!result) {
+          toast.error("Please wait, wishlist not ready yet.");
+          setLoadingWishlisting(false)
+          return;
+        }
+
+        const { status, message } = result;
+        if (status) {
+          toast.success(wishlisted ? "Removed from wishlist." : "Added to wishlist.");
+        } else {
+          toast.error(message || "Something went wrong.");
+        }
+      } catch (err) {
+        console.error("toggleWishlist failed:", err);
+        toast.error("Unexpected error while updating wishlist.");
       }
-    } 
+      setLoadingWishlisting(false)
+    };
+
 
   const [mainImage, setMainImage] = useState()
 
@@ -275,11 +294,14 @@ const Product = () => {
           </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 space-y-3 sm:space-y-0">
-        <Button onClick={toggleWishlist} className="cursor-pointer inline-flex items-center gap-2">
-              <Heart
+        <Button disabled={loadingWishlisting} onClick={toggleWishlist} className="cursor-pointer inline-flex items-center gap-2">
+          {loadingWishlisting ? <LoadingButton /> : 
+          <Heart
               className={`w-5 h-5 ${wishlisted ? 'text-red-600 fill-red-600' : 'fill-none'}`}
             />
-            {wishlisted ? "Remove from Wishlist" : "Save to Wishlist"}
+          }
+              
+            {loadingWishlisting ? "Loading..." : wishlisted ? "Remove from Wishlist" : "Save to Wishlist"}
         </Button>
 
         <Button onClick={() => navigate(`/products?brand=${product.brand}`)} variant="outline" className="cursor-pointer inline-flex items-center gap-2">
