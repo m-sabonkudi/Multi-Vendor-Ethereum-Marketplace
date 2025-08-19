@@ -56,7 +56,7 @@ const Footer = () => {
               className="text-muted-foreground hover:text-primary transition-colors duration-200">
               <FaTiktok className="w-5 h-5" />
             </a>
-            <a href="https://x.com/pyman_dev" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
+            <a href="https://x.com/m_sabonkudi" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
               className="text-muted-foreground hover:text-primary transition-colors duration-200">
               <FaXTwitter className="w-5 h-5" />
             </a>
