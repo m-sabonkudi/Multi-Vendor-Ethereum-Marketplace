@@ -71,6 +71,7 @@ export function WishlistProvider({ children }) {
       const updated = [...wishlists, product_id];
       setWishlists(updated);
       localStorage.setItem("guest_wishlist", JSON.stringify(updated));
+      return { status: true }
     }
   };
 
@@ -95,6 +96,7 @@ export function WishlistProvider({ children }) {
       const updated = wishlists.filter(id => id !== product_id);
       setWishlists(updated);
       localStorage.setItem("guest_wishlist", JSON.stringify(updated));
+      return { status: true }
     }
   };
 
