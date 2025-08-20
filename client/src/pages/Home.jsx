@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Car, Star, Users, Shield, ArrowRight, Filter, ArrowUp } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import ProductCard from '@/components/ProductCard'
 import Spinner from '@/components/Spinner'
 import FilterComponent from '@/components/FilterComponent'
@@ -15,18 +15,33 @@ const Home = () => {
   const [cars, setCars] = useState([])
   const [loading, setLoading] = useState(true)
   const location = useLocation()
+  const navigate = useNavigate()
 
-  useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const action = params.get('action');
+useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  const action = params.get("action");
+
+  if (action) {
     if (action === "loggedin") {
       setTimeout(() => toast.success("Logged in."), 0);
     } else if (action === "loggedout") {
       setTimeout(() => toast.success("Logged out."), 0);
     } else if (action === "registered") {
-        setTimeout(() => toast.success("Account created!"), 0);
-      }
-  }, [location.search]);
+      setTimeout(() => toast.success("Account created!"), 0);
+    }
+
+    // Remove "action" param after showing toast
+    params.delete("action");
+    navigate(
+      {
+        pathname: location.pathname,
+        search: params.toString(),
+      },
+      { replace: true }
+    );
+  }
+}, [location.search, navigate]);
+
 
   useEffect(() => {
     const fetchCars = async () => {
