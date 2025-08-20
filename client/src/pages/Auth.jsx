@@ -180,6 +180,14 @@ const Auth = () => {
           const provider = new ethers.BrowserProvider(window.ethereum);
           const signer = await provider.getSigner();
 
+          const network = await provider.getNetwork();
+          console.log("Network:", network);
+
+          if (network.chainId !== 11155111n) {
+            toast.error("Please switch to Sepolia test network")
+            return 
+          }
+
           console.log("Signererrr", signer)
           
           toast.success("Wallet connected successfully!")
